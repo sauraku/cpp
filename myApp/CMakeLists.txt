@@ -6,9 +6,10 @@ set(CMAKE_CXX_COMPILER "g++")
 project (myApp)
 
 set(myMathLibFolder ${CMAKE_CURRENT_SOURCE_DIR}/../myMath)
+include(${myMathLibFolder}/myMath.cmake)
 
 # # Add an executable
 add_executable(myApp main.cpp)
 target_include_directories(myApp PUBLIC ${myMathLibFolder}/include/)
-target_link_libraries(myApp ${myMathLibFolder}/build/libmyMath.a)
+target_link_libraries(myApp ${CMAKE_CURRENT_SOURCE_DIR}/build/libmyMath.a)
 
