@@ -8,10 +8,13 @@ project (myMath)
 # add libraries
 set(HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/myMath.hpp)
 add_library(myMath myMath.cpp ${HEADER_FILES})
-target_include_directories(myMath PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 
 
-# # Add an executable
-# add_executable(myexec main.cpp ${HEADER_FILES})
-# target_include_directories(myexec PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+# target_include_directories(myMath PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+
+
+# Add an executable
+add_executable(myexec myMath.cpp main.cpp ${HEADER_FILES})
+target_include_directories(myexec PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
